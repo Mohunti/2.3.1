@@ -37,4 +37,8 @@ public class UserDAO {
         User userToBeUpdated = showById(id);
         userToBeUpdated.setName(updatedUser.getName());
     }
+
+    public void delete(int id) {
+        users.removeIf(user -> user.getId() == id);
+    }
 }
