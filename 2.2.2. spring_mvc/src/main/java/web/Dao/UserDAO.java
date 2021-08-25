@@ -13,10 +13,10 @@ public class UserDAO {
 
     {
         users = new ArrayList<>();
-        users.add(new User(++USER_COUNT, "Anton"));
-        users.add(new User(++USER_COUNT, "Vlad"));
-        users.add(new User(++USER_COUNT, "Oleg"));
-
+        users.add(new User(++USER_COUNT, "Anton","Shirshov", 24));
+        users.add(new User(++USER_COUNT, "Vlad","Vladov", 35));
+        users.add(new User(++USER_COUNT, "Oleg","Olegov", 71));
+        users.add(new User(++USER_COUNT, "Vadim","Vadimov", 68));
 
     }
 
@@ -36,9 +36,12 @@ public class UserDAO {
     public void update(int id, User updatedUser) {
         User userToBeUpdated = showById(id);
         userToBeUpdated.setName(updatedUser.getName());
+        userToBeUpdated.setSurName(updatedUser.getSurName());
+        userToBeUpdated.setAge(updatedUser.getAge());
     }
 
     public void delete(int id) {
         users.removeIf(user -> user.getId() == id);
+
     }
 }
